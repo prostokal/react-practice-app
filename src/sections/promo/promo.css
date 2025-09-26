@@ -1,0 +1,38 @@
+.promo {
+    padding-top: 52px;
+    min-height: 80vh;
+    background: url('../../../public/images/promo/promo-bg.jpg') no-repeat;
+    background-size: 100% 100%;
+    color: white;
+    
+}
+.promo .divider img {
+    width: 40px;
+}
+
+.promo .divider::before {
+    content: '';
+    top: 50%;
+    left: 50%;
+    translate: 50%;
+    position: absolute;
+    text-align: center;
+    height: 2px;
+    width: 70px;
+    background: white; 
+    transform: translateY(-100%);
+    
+}
+
+.promo .divider::after {
+    content: '';
+    top: 50%;
+    right: 50%;
+    translate: -50%;
+    position: absolute;
+    text-align: center;
+    height: 2px;
+    width: 70px;
+    background: white; 
+    transform: translateY(-100%);
+}

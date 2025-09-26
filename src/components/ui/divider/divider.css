@@ -1,0 +1,36 @@
+.divider {
+    margin-top: 20px;
+    text-align: center;
+    position: relative;
+}
+.divider img {
+    width: 40px;
+    color: black;
+}
+
+.divider::before {
+    content: '';
+    top: 50%;
+    left: 50%;
+    translate: 50%;
+    position: absolute;
+    text-align: center;
+    height: 2px;
+    width: 70px;
+    background: black; 
+    transform: translateY(-100%);
+    
+}
+
+.divider::after {
+    content: '';
+    top: 50%;
+    right: 50%;
+    translate: -50%;
+    position: absolute;
+    text-align: center;
+    height: 2px;
+    width: 70px;
+    background: black; 
+    transform: translateY(-100%);
+}

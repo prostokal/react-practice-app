@@ -1,0 +1,30 @@
+.header-nav {
+    position: relative;
+    ul {
+        margin: 0;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+}
+
+.header-nav__item {
+    list-style-type: none;
+    margin-right: 50px;
+    font-weight: 500;
+    font-size: 20px;
+    
+    a {
+        text-decoration: none;
+        color: white;
+    }
+}
+.header-nav__item:first-child {
+    position: relative;
+}
+.header-nav__item:first-child::before {
+    content: url('../../../public/icons/promo/logo-coffe.svg');
+    position: absolute;
+    left: -25%;
+    top: -65%;
+}
