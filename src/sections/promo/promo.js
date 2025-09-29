@@ -2,13 +2,15 @@ import HeroBlock from "../../components/hero-block/hero-block";
 import Header from "../../components/header/header";
 import './promo.css';
 
-function Promo({data}) {
+function Promo({data, status, changeStatus}) {
     return (
-        <section className="promo">
-            
+        <section data-status={status} className="promo">
+
             <div className="container">
-                <Header data={data}></Header>
-                <HeroBlock></HeroBlock>
+                <Header status={status} changeStatus={changeStatus} data={data}></Header>
+                
+                <HeroBlock status={status}>
+                </HeroBlock>
             </div>
             
         </section>

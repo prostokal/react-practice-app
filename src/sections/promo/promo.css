@@ -1,10 +1,36 @@
 .promo {
+    min-height: 610px;
     padding-top: 52px;
-    min-height: 80vh;
-    background: url('../../../public/images/promo/promo-bg.jpg') no-repeat;
     background-size: 100% 100%;
     color: white;
-    
+    transition: all 0.7s;
+}
+.promo[data-status='house']{
+    background: url('../../../public/images/promo/promo-bg-house.jpg') no-repeat fixed center top/cover;
+}
+.promo[data-status='coffee']{
+    background: linear-gradient(
+          rgba(0, 0, 0, 0.4), 
+          rgba(0, 0, 0, 0.4)
+        ), url('../../../public/images/promo/promo-bg-coffee.jpg') no-repeat bottom;
+    min-height: 350px;;
+    background-position: 50% 39%;
+    .hero-block {
+        margin-top: 90px;
+    }
+
+}
+.promo[data-status='pleasure']{
+    background: url('../../../public/images/promo/promo-bg-house.jpg') no-repeat fixed center/cover;
+    background: linear-gradient(
+          rgba(0, 0, 0, 0.4), 
+          rgba(0, 0, 0, 0.4)
+        ), url('../../../public/images/promo/promo-bg-pleasure.jpg') no-repeat bottom;
+    min-height: 350px;;
+    background-position: 50% 39%;
+    .hero-block {
+        margin-top: 90px;
+    }
 }
 .promo .divider img {
     width: 40px;

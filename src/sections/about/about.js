@@ -2,15 +2,22 @@ import './about.css';
 
 import Divider from '../../components/ui/divider/divider';
 
-function About() {
+function About({status}) {
+    // const config = {
+    //     'house': {showImg: null},
+    //     'coffeee' : {},
+    //     'pleasure': {}
+    // }
+
+    // const {title, showDivider,subTitle, showButton} = config[status];
     return (
         <section className="about">
             <div className="container">
 
-                <h2 className="about-title title">About Us</h2>
-                
-                <Divider color='black'></Divider>
 
+                
+                <h2 className="about-title title">About Us</h2>
+                <Divider color='black'></Divider>
                 <p className="about-descr">
                     Extremity sweetness difficult behaviour he of. On disposal of as landlord horrible.
                     Afraid at highly months do things on at. Situation recommend objection do intention
@@ -25,7 +32,7 @@ function About() {
                     recommend. Did even but nor are most gave hope. Secure active living depend son
                     repair day ladies now.
                 </p>
-                    
+
             </div>
         </section>
     )
