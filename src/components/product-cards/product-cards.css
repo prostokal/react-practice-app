@@ -1,0 +1,10 @@
+.product-cards {
+    margin-top: 60px;
+    display: grid;
+    gap: 30px 50px;
+    text-align: right;
+    justify-content:center;
+    grid-template-columns: repeat(3, minmax(220px, 310px));
+    grid-template-rows: minmax(220px, auto);
+    grid-auto-rows: minmax(220px, auto);
+}

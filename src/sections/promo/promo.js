@@ -8,7 +8,7 @@ function Promo({data, status, changeStatus}) {
 
             <div className="container">
                 <Header status={status} changeStatus={changeStatus} data={data}></Header>
-                
+            
                 <HeroBlock status={status}>
                 </HeroBlock>
             </div>
