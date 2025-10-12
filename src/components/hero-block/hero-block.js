@@ -23,7 +23,14 @@ function HeroBlock({status}) {
             showDivider: false,
             subTitle: null,
             showButton: false
+        },
+        buying: {
+            title: 'Our Coffee',
+            showDivider: false,
+            subTitle: null,
+            showButton: false
         }
+        
     }
 
     const {title, showDivider,subTitle, showButton} = config[status]

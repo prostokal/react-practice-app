@@ -5,7 +5,7 @@ import './header.css';
 function Header({data, changeStatus}) {
     return (
         <header className='header'>
-            <NavInfo changeStatus={changeStatus} data={data}>
+            <NavInfo data={data} changeStatus={changeStatus}>
             </NavInfo>
         </header>
     )

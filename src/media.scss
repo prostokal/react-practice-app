@@ -84,14 +84,31 @@
         grid-template-columns: minmax(250px, 320px);
     }
     .about__wrapper {
-        grid-template-rows: minmax(394px, 445px);
+        grid-template-columns: minmax(394px, 445px);
     }
     .about__wrapper[data-status='coffee']{
     grid-template-columns: 0.8fr;
         
     }
-    .about__wrapper[data-status='pleasure']{
+    .about__wrapper[data-status='pleasure'], .about__wrapper[data-status='buying'] {
         grid-template-columns: 0.8fr;
+    }
+    .app-filter {
+        align-items: center; 
+        flex-direction: column;
+        &-btns {
+            margin-top: 15px;
+        }
+    }
+    .footer {
+        .header {
+        &-nav {
+            ul {
+                justify-content: space-around;
+            
+            }
+        }
+        }
     }
 }
 @media (max-width: 576px) {

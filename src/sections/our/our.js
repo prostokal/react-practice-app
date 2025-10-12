@@ -4,20 +4,62 @@ import ProductCards from '../../components/product-cards/product-cards';
 import AppFilter from '../../components/app-filter/app-filter';
 import Divider from '../../components/ui/divider/divider';
 
-function OurBest({status, catalog}) {
-    let visibleCards = []
-    const countrys = Array.from(new Set(catalog.map(item => item.country)))
-    return (
-        <section className='our' data-status={status[1]}>
-            <div className="container">
+import { Component } from 'react';
 
-                {status[1] == 'house' ? <h2 className="our-title title">Our best</h2> : null}
-                {status[1] == 'house' ? null : <Divider/>}
-                {status[1] == 'coffee' ? <AppFilter countrys={countrys}></AppFilter> : null}
+class OurBest extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            filter: '',
+            country: 'all'
+        }
+    }
+
+    changeFilterState = (text) => {
+        this.setState(() => {
+            return {
+                filter: text,
+            }
+        })
+    }
+    changeCountryState = (country) => {
+        let count = country
+        if (this.state.country == country) {
+            count = 'all'
+        }
+        this.setState(() => {
+            return {
+                country: count
+            }
+        })
+    }
+    render() {
+        const {status, catalog, changeBuyingId} = this.props;
+        const countrys = Array.from(new Set(catalog.map(item => item.country)));
+        
+        const {filter, country} = this.state 
+
+        
+        return (
+            <section className='our' data-status={status}>
+            <div className="container">
+            
+                {status == 'house' ? <h2 className="our-title title">Our best</h2> : null}
+                {status == 'house' ? null : <Divider/>}
+                {status == 'coffee' ? <AppFilter countrys={countrys}
+                changeFilterState={this.changeFilterState}
+                changeCountryState={this.changeCountryState}
+                filter={filter}
+                ></AppFilter> : null}
                 
-                <ProductCards catalog={catalog} status={status[1]}></ProductCards>
+                <ProductCards changeBuyingId={changeBuyingId} 
+                catalog={catalog.filter(item => filter != '' ? item.title.toLowerCase().includes(filter.toLowerCase()): item).filter(item => country != 'all'? item.country == country : item)}
+                status={status}
+
+                ></ProductCards>
             </div>
         </section>
     )
+    }
 }
 export default OurBest; 

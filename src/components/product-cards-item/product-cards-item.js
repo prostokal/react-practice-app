@@ -1,9 +1,10 @@
 import './product-cards-item.css';
 
-function ProductCardsItem({status, config}) {
-    const {url,country, title, price} = config;
+function ProductCardsItem({changeBuyingId, status, config}) {
+    const {url,country,key, title, price} = config;
+    
     return (
-        <div className="product-cards-item" data-status={status}>
+        <div onClick={() => changeBuyingId(key)}  className="product-cards-item" data-status={status}>
             <div className="product-cards-item__img">
                 <img src={url} alt="" />
             </div>

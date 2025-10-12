@@ -22,6 +22,9 @@
     align-items: center;
     justify-content: center;
 }
+.about__wrapper[data-status='buying'] .about-descr {
+        text-align: left;
+}
 .about__wrapper[data-status='house']{
     grid-template-columns: 0.8fr;
 

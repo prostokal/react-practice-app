@@ -1,0 +1,9 @@
+.footer {
+    padding-top: 30px;
+}
+.footer ul {
+    justify-content: center;
+}
+.footer ul a {
+    color: #000;
+}

@@ -4,7 +4,7 @@ import Divider from '../../components/ui/divider/divider';
 
 function About({status, buyingCard}) {
     const config = {
-        house: {img: null, title: 'About Us', descr: (
+        house: {url: null, title: 'About Us', descr: (
       <>
                 Extremity sweetness difficult behaviour he of. On disposal of as landlord horrible.
                 Afraid at highly months do things on at. Situation recommend objection do intention so questions.
@@ -19,7 +19,7 @@ function About({status, buyingCard}) {
       </>
       )},
 
-        coffee: {img: './icons/about/about-coffee.jpg', title: 'About our beans', descr: (
+        coffee: {url: './icons/about/about-coffee.jpg', title: 'About our beans', descr: (
             <>
                 Extremity sweetness difficult behaviour he of. On disposal of as landlord horrible.
                 <br /><br />
@@ -29,7 +29,7 @@ function About({status, buyingCard}) {
                 Children me laughing we prospect answered followed. At it went is song that held help face.
             </>
         )},
-        pleasure: {img: './icons/about/about-pleasure.jpg', title: 'About our good', descr: (<>
+        pleasure: {url: './icons/about/about-pleasure.jpg', title: 'About our good', descr: (<>
                 Extremity sweetness difficult behaviour he of. On disposal of as landlord horrible.
                 <br /><br />
                 Afraid at highly months do things on at. Situation recommend objection do intention so questions.
@@ -37,32 +37,43 @@ function About({status, buyingCard}) {
                 Last ask him cold feel met spot shy want.
                 Children me laughing we prospect answered followed. At it went is song that held help face.
             </>)},        
+        
+
     }
+    if (buyingCard) {
+        config.buying = {
+            url: buyingCard.url, title: 'About it', descr: (
+            <>
+            <b>Country:</b> {buyingCard.country} <br /><br />
 
-    const {img, title, descr} = config[status];
-
-    if (!buyingCard) {
+            <b>Description:</b> Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem quidem inventore, cupiditate nulla, voluptatum nostrum dolores eveniet enim quaerat repellat animi numquam vitae odio in culpa deleniti molestiae non explicabo!
+            <br /><br />
+            <b>Price:</b> <strong>{buyingCard.price}</strong>
+            </>
+        )}
+    }
+    const {url, title, descr} = config[status];
         return (
             <section className="about">
-            <div className="container">
+                <div className="container">
 
-                <div data-status={status} className="about__wrapper">
-                
-                {img && <div data-status={status} className="about__img"><img src={img} alt={img.slice(0, -4)} /></div>}
+                    <div data-status={status} className="about__wrapper">
+                    
+                    {url && <div data-status={status} className="about__img"><img src={url} alt={url.slice(0, -4)} /></div>}
 
-                <main className="about__info">
-                    <h2 className="about-title title">{title}</h2>
-                    <Divider color='black'></Divider>
-                    <p className="about-descr">
-                        {descr}
-                    </p>
-                </main>
+                    <main className="about__info">
+                        <h2 className="about-title title">{title}</h2>
+                        <Divider color='black'></Divider>
+                        <p className="about-descr">
+                            {descr}
+                        </p>
+                    </main>
+                    </div>
+
                 </div>
-
-            </div>
-        </section>
+            </section>
         )
-    }
+
 
 }
 

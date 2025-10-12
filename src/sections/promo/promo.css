@@ -8,7 +8,7 @@
 .promo[data-status='house']{
     background: url('../../../public/images/promo/promo-bg-house.jpg') no-repeat fixed center top/cover;
 }
-.promo[data-status='coffee']{
+.promo[data-status='coffee'], .promo[data-status='buying']{
     background: linear-gradient(
           rgba(0, 0, 0, 0.4), 
           rgba(0, 0, 0, 0.4)
