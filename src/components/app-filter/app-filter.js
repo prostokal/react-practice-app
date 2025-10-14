@@ -1,8 +1,7 @@
 import './app-filter.css';
 
 
-function AppFilter({countrys,filter ,changeFilterState, changeCountryState}) {
-
+function AppFilter({countrys,country,filter ,changeFilterState, changeCountryState}) {
 
     return (
         <div className="app-filter">
@@ -23,7 +22,7 @@ function AppFilter({countrys,filter ,changeFilterState, changeCountryState}) {
             
             <div className="app-filter-btns">
                 <label >Or filter</label>
-                {countrys.map(item => <button onClick={() => changeCountryState(item)} type="button" className='app-filter__btn' key={item} >{item}</button>)}
+                {countrys.map(item => <button onClick={() => changeCountryState(item)} type="button" className={country == item ? 'app-filter__btn app-filter__btn_active': 'app-filter__btn'} key={item} >{item}</button>)}
             </div>
         </div>    
     )

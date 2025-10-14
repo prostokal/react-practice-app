@@ -4,7 +4,7 @@ import './hero-block.css';
 import Divider from '../ui/divider/divider';
 
 // props - {title, visible}
-function HeroBlock({status}) {
+function HeroBlock({changeStatus, status}) {
     const config = {
         house: {
             title: "Everything You Love About Coffee",
@@ -39,7 +39,7 @@ function HeroBlock({status}) {
                 {<h1 className='hero-block-title'>{title}</h1>}
                 {showDivider && <Divider color='white'></Divider>}
                 {subTitle &&  <h2 className='hero-block-subtitle'>We makes every day full of energy and taste Want to try our beans?</h2>}
-                {showButton && <button className="hero-block__button">More</button>}
+                {showButton && <button onClick={() => changeStatus('coffee')} className="hero-block__button">More</button>}
             </main>
         )
 }

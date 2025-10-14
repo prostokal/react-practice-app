@@ -49,6 +49,7 @@ class OurBest extends Component {
                 {status == 'coffee' ? <AppFilter countrys={countrys}
                 changeFilterState={this.changeFilterState}
                 changeCountryState={this.changeCountryState}
+                country={country}
                 filter={filter}
                 ></AppFilter> : null}
                 

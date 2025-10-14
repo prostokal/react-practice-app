@@ -9,7 +9,7 @@ function Promo({data, status, changeStatus}) {
             <div className="container">
                 <Header changeStatus={changeStatus} data={data}></Header>
             
-                <HeroBlock status={status}>
+                <HeroBlock changeStatus={changeStatus} status={status}>
                 </HeroBlock>
             </div>
             

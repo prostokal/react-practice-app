@@ -26,6 +26,10 @@
     box-shadow: 2px 0px 20px 4px rgba(0,0,0,0.12);
     cursor: pointer;
 }
+.app-filter__btn_active {
+    box-shadow: 2px 0px 20px 4px rgba(0, 0, 0, 0.4)
+}
+
 .app-filter__btn:last-child {
     margin: 0;
 }
